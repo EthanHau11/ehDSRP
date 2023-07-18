@@ -11,11 +11,18 @@ t.test(orgo_avocado$Total.Bags, con_avocado$Total.Bags, paired = F, alternative 
 clean_avocado <- filter(avocado,!is.na(AveragePrice))
 
 anova_results <- aov(data = clean_avocado, AveragePrice ~ region)
-
 TukeyHSD(anova_results)
 
-
+?anova
+?summary
 
 head(avocado)
 
 str(avocado)
+
+?table
+
+t <- table(avocado$region, avocado$type)
+
+?mutate
+chisq.test(t)
